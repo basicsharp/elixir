@@ -63,6 +63,7 @@ var gulpTask = function(paths, babel) {
     return (
         gulp
         .src(paths.src.path)
+        .pipe(plumber())
         .pipe($.if(config.sourcemaps, $.sourcemaps.init()))
         .pipe($.concat(paths.output.name))
         // .pipe($.if(babel, $.babel(babel)))
