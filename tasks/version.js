@@ -3,6 +3,7 @@ var del = require('del');
 var glob = require("glob");
 var gulp = require('gulp');
 var rev = require('gulp-rev');
+var plumber = require('gulp-plumber');
 var Elixir = require('laravel-elixir');
 var vinylPaths = require('vinyl-paths');
 var parsePath  = require('parse-filepath');
@@ -38,6 +39,7 @@ Elixir.extend('version', function(src, buildPath) {
 
         return (
             gulp.src(paths.src.path, { base: './' + publicPath })
+            .pipe(plumber())
             .pipe(gulp.dest(paths.output.baseDir))
             .pipe(files)
             .pipe(rev())
