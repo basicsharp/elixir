@@ -69,7 +69,7 @@ var gulpTask = function(paths, babel) {
         // .pipe($.if(config.production, $.uglify()))
         .pipe($.if(config.sourcemaps, $.sourcemaps.write('.')))
         .pipe(gulp.dest(paths.output.baseDir))
-        .pipe(new Elixir.Notification('Scripts Merged!'))
+        // .pipe(new Elixir.Notification('Scripts Merged!'))
     );
 };
 
