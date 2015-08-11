@@ -1,5 +1,6 @@
 var gulp = require('gulp');
 var Elixir = require('laravel-elixir');
+var plumber = require('gulp-plumber');
 
 var $ = Elixir.Plugins;
 var config = Elixir.config;
